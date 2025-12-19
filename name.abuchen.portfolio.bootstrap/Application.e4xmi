@@ -56,6 +56,8 @@
           <children xsi:type="menu:MenuSeparator" xmi:id="__mE8gOIVEe6pEIPYaDGzWA" elementId="name.abuchen.portfolio.bootstrap.menuseparator.9"/>
           <children xsi:type="menu:HandledMenuItem" xmi:id="_9Js00EzWEfCcpO9Ays2KhA" elementId="name.abuchen.portfolio.ui.menu.tools.migratePortfolioReportHandler" label="%command.tools.migratePortfolioReport.name" command="_gfBZEEzWEfCcpO9Ays2KhA"/>
           <children xsi:type="menu:HandledMenuItem" xmi:id="_AR9yIOIWEe6pEIPYaDGzWA" elementId="name.abuchen.portfolio.ui.menu.file.restoresourceattribute" label="%command.fix.restoresourceattribute" command="_FunoEOIWEe6pEIPYaDGzWA"/>
+          <children xsi:type="menu:MenuSeparator" xmi:id="_O_UqkBfWEeOders_POVQHQ1" elementId="name.abuchen.portfolio.ui.menuseparator.1"/>  
+          <children xsi:type="menu:HandledMenuItem" xmi:id="_EMANUEL_MENU" elementId="name.abuchen.portfolio.ui.menu.file.exportemanuel" label="Export Emanuel" tooltip="Export for emanuel" command="_EMANUEL_CMD"/>
         </children>
         <children xsi:type="menu:MenuSeparator" xmi:id="_O_UqkBfWEeOders_POVQHQ" elementId="name.abuchen.portfolio.ui.menuseparator.1"/>
         <children xsi:type="menu:Menu" xmi:id="_mF9JAEYQEeSRXYVe298mXg" elementId="name.abuchen.portfolio.ui.menu.file.import" label="%command.import.name" iconURI="platform:/plugin/name.abuchen.portfolio.ui/icons/import_file.png">
@@ -186,6 +188,7 @@
   <handlers xmi:id="_LyQvULCxEeefXq-wtldCQQ" elementId="name.abuchen.portfolio.ui.handler.import.ib" contributionURI="bundleclass://name.abuchen.portfolio.ui/name.abuchen.portfolio.ui.handlers.ImportIBHandler" command="_QQsCcLCxEeefXq-wtldCQQ"/>
   <handlers xmi:id="_TRCSVImportHandler" elementId="name.abuchen.portfolio.ui.handler.import.traderepublic" contributionURI="bundleclass://name.abuchen.portfolio.ui/name.abuchen.portfolio.ui.handlers.ImportTradeRepublicHandler" command="_TRCSVImportCommand"/>
   <handlers xmi:id="_Gig3QBiPEeOR1rNFCzC82A" elementId="name.abuchen.portfolio.ui.handler.consistencychecks" contributionURI="bundleclass://name.abuchen.portfolio.ui/name.abuchen.portfolio.ui.handlers.tools.RunConsistencyChecksHandler" command="_D9tYMBiPEeOR1rNFCzC82A"/>
+  <handlers xmi:id="_EMANUEL_HANDLER" elementId="name.abuchen.portfolio.ui.handler.exportemanuel" contributionURI="bundleclass://name.abuchen.portfolio.ui/name.abuchen.portfolio.ui.commands.HelloHandler" command="_EMANUEL_CMD"/>
   <handlers xmi:id="_BackfillExDatesHandler" elementId="name.abuchen.portfolio.ui.handler.backfillExDates" contributionURI="bundleclass://name.abuchen.portfolio.ui/name.abuchen.portfolio.ui.handlers.tools.BackfillExDatesHandler" command="_BackfillExDatesCommand"/>
   <handlers xmi:id="_0fz04BiQEeOR1rNFCzC82A" elementId="name.abuchen.portfolio.ui.handler.updatequotes" contributionURI="bundleclass://name.abuchen.portfolio.ui/name.abuchen.portfolio.ui.handlers.UpdateQuotesHandler" command="_tukxoBiQEeOR1rNFCzC82A"/>
   <handlers xmi:id="_88LHwBiREeOR1rNFCzC82A" elementId="name.abuchen.portfolio.ui.handler.updateproduct" contributionURI="bundleclass://name.abuchen.portfolio.ui/name.abuchen.portfolio.ui.handlers.UpdateHandler" command="_59FgcBiREeOR1rNFCzC82A"/>
@@ -271,6 +274,7 @@
   <commands xmi:id="_LiZuIBiOEeOR1rNFCzC82A" elementId="name.abuchen.portfolio.ui.command.newclient" commandName="newClientCommand"/>
   <commands xmi:id="_3CjQwBfHEeOders_POVQHQ" elementId="name.abuchen.portfolio.ui.command.open" commandName="openCommand"/>
   <commands xmi:id="_D9tYMBiPEeOR1rNFCzC82A" elementId="name.abuchen.portfolio.ui.command.consistencychecks" commandName="consistencyChecksCommand"/>
+  <commands xmi:id="_EMANUEL_CMD" elementId="name.abuchen.portfolio.ui.menu.file.export.emanuel" commandName="emanuelExportCommand"/>
   <commands xmi:id="_lcgCQBfWEeOders_POVQHQ" elementId="name.abuchen.portfolio.ui.command.export" commandName="exportCommand"/>
   <commands xmi:id="_GgTyQBhXEeOR1rNFCzC82A" elementId="name.abuchen.portfolio.ui.command.import" commandName="%command.csv">
     <parameters xmi:id="_MY53cBRFEemo-IqrE7irYg" elementId="name.abuchen.portfolio.ui.param.name" name="name"/>
