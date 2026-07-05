@@ -214,6 +214,38 @@ public class PortfolioPart implements ClientInputListener
         item.ifPresent(this::activateView);
 
         focus = book;
+
+        // Headless export of Statement of Assets - Holdings when requested
+        String exportRange = System.getProperty("pp.exportHoldings");
+        if (exportRange != null && !exportRange.isBlank())
+        {
+            PortfolioPlugin.log("Starting headless export of daily holdings PNGs for range: " + exportRange);
+
+            try
+            {
+                var parts = exportRange.trim().split("-");
+                var fmt = java.time.format.DateTimeFormatter.ofPattern("yyyyMMdd");
+                java.time.LocalDate from = java.time.LocalDate.parse(parts[0], fmt);
+                java.time.LocalDate to = java.time.LocalDate.parse(parts[1], fmt);
+
+                var outDirProp = System.getProperty("pp.exportOutputDir");
+                java.io.File outDir = outDirProp != null && !outDirProp.isBlank() ? new java.io.File(outDirProp)
+                                : new java.io.File(System.getProperty("user.dir"), "holdings-export");
+
+                var converter = new name.abuchen.portfolio.money.CurrencyConverterImpl(
+                                clientInput.getExchangeRateProviderFacory(), clientInput.getClient().getBaseCurrency());
+
+                name.abuchen.portfolio.ui.export.HoldingsImageExporter
+                                .exportDailyHoldingsPngs(clientInput.getClient(), converter, from, to, outDir);
+
+                // Close application after export
+                parent.getDisplay().asyncExec(() -> parent.getShell().close());
+            }
+            catch (Exception e)
+            {
+                PortfolioPlugin.log(e);
+            }
+        }
     }
 
     private void addToNavigationMenu(IMenuManager menuManager, int depth, Stream<Item> items)
